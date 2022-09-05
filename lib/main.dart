@@ -49,6 +49,16 @@ class MyPage extends StatelessWidget {
                   backgroundImage: AssetImage("assets/00.jpg"),
                   backgroundColor: Colors.white,
                 ), //현재 사용자 이미지 가져오기
+              otherAccountsPictures: [
+                CircleAvatar(
+                  backgroundColor: Colors.white,
+                  backgroundImage: AssetImage("assets/03.jpg"),
+                ),
+               /* CircleAvatar(
+                  backgroundColor: Colors.white,
+                  backgroundImage: AssetImage("assets/03.jpg"),
+                )*/
+              ], //한개이상의 다른 계정 이미지 추가
                 accountName: Text("BBANTO"), accountEmail: Text("bbanto@bbant.co.kr"),
                 onDetailsPressed: () {
                   print("arrow is clicked");
@@ -60,8 +70,38 @@ class MyPage extends StatelessWidget {
                   bottomRight: Radius.circular(40.0)
                 )
               ),
-            )
-          ],
+            ),
+            ListTile(
+              leading: Icon(Icons.home,
+              color: Colors.grey[850],
+              ),
+              title: Text("Home"),
+              onTap: (){
+                print("Home is clicked");
+              },
+              trailing: Icon(Icons.add),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings,
+                color: Colors.grey[850],
+              ),
+              title: Text("Setting"),
+              onTap: (){
+                print("Setting is clicked");
+              },
+              trailing: Icon(Icons.add),
+            ),
+            ListTile(
+              leading: Icon(Icons.question_answer,
+                color: Colors.grey[850],
+              ),
+              title: Text("Q&A"),
+              onTap: (){
+                print("Q&A is clicked");
+              },
+              trailing: Icon(Icons.add),
+            ),
+          ],//[]
         ),
       ),
     );
