@@ -27,13 +27,8 @@ class MyPage extends StatelessWidget {
         title: Text("Appbar icon menu"),
         centerTitle: true,
         elevation: 0.0,
-        leading: IconButton(icon: Icon(Icons.menu), // leading //간단한 위젯이나 아이콘 등을 앱바 타이틀 왼쪽에 위치시키는 기능
-          onPressed: () {
-            print("menu button is clicked");
-          },
-        ),
         actions: [
-          IconButton(icon: Icon(Icons.shopping_cart),
+          IconButton(icon: Icon(Icons.shopping_cart),// leading //간단한 위젯이나 아이콘 등을 앱바 타이틀 왼쪽에 위치시키는 기능
             onPressed: () {
               print("Shopping button is clicked");
             },
@@ -44,6 +39,30 @@ class MyPage extends StatelessWidget {
             },
           ),
         ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            UserAccountsDrawerHeader(
+                currentAccountPicture: CircleAvatar(
+                  backgroundImage: AssetImage("assets/00.jpg"),
+                  backgroundColor: Colors.white,
+                ), //현재 사용자 이미지 가져오기
+                accountName: Text("BBANTO"), accountEmail: Text("bbanto@bbant.co.kr"),
+                onDetailsPressed: () {
+                  print("arrow is clicked");
+                },
+              decoration: BoxDecoration(
+                color: Colors.red[200],
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(40.0),
+                  bottomRight: Radius.circular(40.0)
+                )
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
