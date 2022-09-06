@@ -27,24 +27,32 @@ class MyPage extends StatelessWidget {
           title: Text("Snack Bar"),
           centerTitle: true,
         ),
-        body: Builder(
-          builder: (BuildContext ctx) {
-            return Center(
-              child: TextButton(
-                onPressed: () {
-                  ScaffoldMessenger.of(ctx).showSnackBar(SnackBar(
-                    content: Text("Hello"),
-                  ));
-                  print("text button");
-                },
-                child: Text(
-                  "Show me",
-                  style: TextStyle(color: Colors.white),
+      body: MySnackBar(),
+     );
+  }
+}
+
+class MySnackBar extends StatelessWidget {
+  const MySnackBar({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: ElevatedButton(
+          onPressed: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: Text("Hello",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white
+                  ),
                 ),
-                style: TextButton.styleFrom(backgroundColor: Colors.red),
-              ),
-            );
+                  backgroundColor: Colors.teal,
+                  duration: Duration(milliseconds: 1000),
+                ));
           },
-        ));
+          child: Text("Show me")
+      ),
+    );
   }
 }
