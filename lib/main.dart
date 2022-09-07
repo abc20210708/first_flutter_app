@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -25,33 +25,21 @@ class MyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Toast message"),
-          centerTitle: true,
-        ),
-        body:Center(
-          child: TextButton(
-            onPressed: (){
-              flutterToast();
-            },
-            child: Text("Toast",
-              style: TextStyle(color: Colors.black),
-            ),
-           style: TextButton.styleFrom(
-             backgroundColor: Colors.blue
-           ),
+       backgroundColor: Colors.blue,
+      body: SafeArea(
+        child: Container( //Container는 오직 하나만의 child를 갖는다
+          color: Colors.red,
+          child: Text("Hello"),
+          width: 100,
+          height: 100,
+          margin: EdgeInsets.symmetric(
+            vertical: 50, //세로축
+            horizontal: 10 , //가로축
           ),
+          padding: EdgeInsets.all(40),//상하좌우 20씩
         ),
+      ),
      );
   }
 }
 
-void flutterToast() {
-  Fluttertoast.showToast(
-      msg: "Flutter",
-      gravity: ToastGravity.BOTTOM,
-      backgroundColor: Colors.redAccent,
-      fontSize: 20.0,
-      textColor: Colors.white,
-      toastLength: Toast.LENGTH_SHORT);
-}
