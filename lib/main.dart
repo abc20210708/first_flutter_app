@@ -28,11 +28,7 @@ class MyPage extends StatelessWidget {
       backgroundColor: Colors.teal,
       body: SafeArea(
         child: Center(
-          child: Column(
-            //mainAxisAlignment: MainAxisAlignment.center,
-           //mainAxisSize: MainAxisSize.min,
-            //verticalDirection: VerticalDirection.up, //반대순서
-            //mainAxisAlignment:  MainAxisAlignment.spaceEvenly,
+          child: Row(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Container(
@@ -42,7 +38,7 @@ class MyPage extends StatelessWidget {
                 child: Text("Container 1"),
               ),
               SizedBox(
-                height: 30.0,
+               width: 30.0,
               ),
               Container(
                // width: 100,
