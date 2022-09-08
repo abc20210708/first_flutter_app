@@ -25,18 +25,40 @@ class MyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       backgroundColor: Colors.blue,
+      backgroundColor: Colors.teal,
       body: SafeArea(
-        child: Container( //Container는 오직 하나만의 child를 갖는다
-          color: Colors.red,
-          child: Text("Hello"),
-          width: 100,
-          height: 100,
-          margin: EdgeInsets.symmetric(
-            vertical: 50, //세로축
-            horizontal: 10 , //가로축
+        child: Center(
+          child: Column(
+            //mainAxisAlignment: MainAxisAlignment.center,
+           //mainAxisSize: MainAxisSize.min,
+            //verticalDirection: VerticalDirection.up, //반대순서
+            //mainAxisAlignment:  MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Container(
+                //width: 100,
+                height: 100,
+                color: Colors.white,
+                child: Text("Container 1"),
+              ),
+              SizedBox(
+                height: 30.0,
+              ),
+              Container(
+               // width: 100,
+                height: 100,
+                color: Colors.blue,
+                child: Text("Container 2"),
+              ),
+              Container(
+               // width: 100,
+                height: 100,
+                color: Colors.red,
+                child: Text("Container 3"),
+              ),
+
+            ], // []
           ),
-          padding: EdgeInsets.all(40),//상하좌우 20씩
         ),
       ),
      );
