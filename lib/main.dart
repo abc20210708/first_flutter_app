@@ -14,50 +14,50 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue
         ),
-      home: MyPage(),
+      home: FirstPage(),
     );
   }
 }
 
-class MyPage extends StatelessWidget {
-  const MyPage({Key? key}) : super(key: key);
+class FirstPage extends StatelessWidget {
+  const FirstPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context2) {
     return Scaffold(
-      backgroundColor: Colors.teal,
-      body: SafeArea(
-        child: Center(
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Container(
-                //width: 100,
-                height: 100,
-                color: Colors.white,
-                child: Text("Container 1"),
-              ),
-              SizedBox(
-               width: 30.0,
-              ),
-              Container(
-               // width: 100,
-                height: 100,
-                color: Colors.blue,
-                child: Text("Container 2"),
-              ),
-              Container(
-               // width: 100,
-                height: 100,
-                color: Colors.red,
-                child: Text("Container 3"),
-              ),
-
-            ], // []
-          ),
-        ),
+      appBar: AppBar(
+        title: Text("First app"),
+      ),
+      body: Center(
+        child: ElevatedButton(onPressed: (){
+          Navigator.push(context2, MaterialPageRoute(
+              builder: (BuildContext context){
+                return SecondPage();
+                //builder : (context) => SecondPage()));
+              }
+          ));
+        },
+        child: Text("Go to the Second page")),
       ),
      );
   }
 }
 
+class SecondPage extends StatelessWidget {
+  const SecondPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext ctx) {
+    return  Scaffold(
+      appBar: AppBar(
+        title: Text("Second app"),
+      ),
+      body: Center(
+        child: ElevatedButton(onPressed: (){
+          Navigator.pop(ctx);
+        },
+            child: Text("Go to the First page")),
+      ),
+    );
+  }
+}
