@@ -31,7 +31,7 @@ class FirstPage extends StatelessWidget {
       body: Center(
         child: ElevatedButton(onPressed: (){
           Navigator.push(context2, MaterialPageRoute(
-              builder: (BuildContext context){
+              builder: (_){  //(_) 언더 매개변수는 사용하지 않는 값
                 return SecondPage();
                 //builder : (context) => SecondPage()));
               }
