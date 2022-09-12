@@ -9,55 +9,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: "Snack bar",
-        theme: ThemeData(
-          primarySwatch: Colors.blue
-        ),
-      home: FirstPage(),
+        home: ScreenA(),
     );
   }
 }
 
-class FirstPage extends StatelessWidget {
-  const FirstPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context2) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("First app"),
-      ),
-      body: Center(
-        child: ElevatedButton(onPressed: (){
-          Navigator.push(context2, MaterialPageRoute(
-              builder: (_){  //(_) 언더 매개변수는 사용하지 않는 값
-                return SecondPage();
-                //builder : (context) => SecondPage()));
-              }
-          ));
-        },
-        child: Text("Go to the Second page")),
-      ),
-     );
-  }
-}
-
-class SecondPage extends StatelessWidget {
-  const SecondPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext ctx) {
-    return  Scaffold(
-      appBar: AppBar(
-        title: Text("Second app"),
-      ),
-      body: Center(
-        child: ElevatedButton(onPressed: (){
-          Navigator.pop(ctx);
-        },
-            child: Text("Go to the First page")),
-      ),
-    );
-  }
-}
