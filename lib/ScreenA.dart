@@ -13,11 +13,15 @@ class ScreenA extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(onPressed: (){},
+            ElevatedButton(onPressed: (){
+              Navigator.pushNamed(context, "/b");
+            },
               child: Text("Go to ScrrenB"),
               style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
             ),
-            ElevatedButton(onPressed: (){},
+            ElevatedButton(onPressed: (){
+              Navigator.pushNamed(context, "/c");
+            },
               child: Text("Go to ScrrenC"),
               style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
             ),
