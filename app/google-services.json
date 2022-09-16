@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "970313646190",
+    "project_id": "memo-app-f1e4f",
+    "storage_bucket": "memo-app-f1e4f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:970313646190:android:2182a1c45fb395ad9ae67f",
+        "android_client_info": {
+          "package_name": "com.example.first_flutter_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "970313646190-5du9nh29qdosrib0s8p3j4dl5eqah5k6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChbgPWOtQai5eJKhoCoKkW3qTmiR_Dxts"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "970313646190-5du9nh29qdosrib0s8p3j4dl5eqah5k6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
