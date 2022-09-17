@@ -1,29 +1,42 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart'; //flutter의 package를 가져오는 코드 반드시 필요
+// Import the firebase_core plugin
 import 'package:firebase_core/firebase_core.dart';
-import 'package:first_flutter_app/screens/main_screen.dart';
-import 'package:flutter/material.dart';
 
-
-// void main() {
-//   runApp(MyApp());
-// }
-
-void main() async {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+
   runApp(MyApp());
 }
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
+//참고블로그 - https://learncom1234.tistory.com/36?category=965073
+class MyApp extends StatelessWidget { //MyApp 클래스 선언
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Chatting app",
-      theme: ThemeData(
-        primarySwatch: Colors.blue
-      ),
-      home: LoginSignUpScreen(),
+      title: 'my first app',
+      home: MyPage(),
     );
   }
 }
 
+
+class MyPage extends StatelessWidget {
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: ElevatedButton(
+        child: Text('button'),
+        onPressed: (){
+          createData();
+        },
+      ),
+    );
+  }
+}
+
+void createData(){
+  final usercol=FirebaseFirestore.instance.collection("users").doc("userkey1");
+  usercol.set({
+    "username" : "abc",
+    "age" : 5,
+  });
+}
